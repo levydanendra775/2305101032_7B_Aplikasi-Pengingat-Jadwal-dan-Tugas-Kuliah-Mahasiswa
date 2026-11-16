@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/kertas">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/bg_header">
+
+        <ImageButton
+            android:id="@+id/btnKembali"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="Kembali"
+            android:padding="10dp"
+            app:tint="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JADWALKU"
+                android:textColor="@color/kuning"
+                android:textSize="10sp"
+                android:letterSpacing="0.16"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvJudulForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Tambah Agenda"
+                android:textColor="@android:color/white"
+                android:textSize="21sp"
+                android:fontFamily="sans-serif-medium"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FORM SCROLL -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="24dp">
+
+            <!-- JENIS AGENDA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis agenda"
+                android:textColor="@color/tinta"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/kartu"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/garis"
+                app:strokeWidth="1dp">
+
+                <RadioGroup
+                    android:id="@+id/rgJenis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <RadioButton
+                        android:id="@+id/rbJadwal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Jadwal"
+                        android:textColor="@color/tinta"/>
+
+                    <RadioButton
+                        android:id="@+id/rbTugas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:text="Tugas"
+                        android:textColor="@color/tinta"/>
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- DETAIL AGENDA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Detail agenda"
+                android:textColor="@color/tinta"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Judul agenda"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/kartu"
+                app:boxStrokeColor="@color/biru"
+                app:boxCornerRadiusTopStart="13dp"
+                app:boxCornerRadiusTopEnd="13dp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusBottomEnd="13dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etJudul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="2"
+                    android:textColor="@color/tinta"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Catatan (opsional)"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/kartu"
+                app:boxStrokeColor="@color/biru"
+                app:boxCornerRadiusTopStart="13dp"
+                app:boxCornerRadiusTopEnd="13dp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusBottomEnd="13dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCatatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="2"
+                    android:maxLines="4"
+                    android:textColor="@color/tinta"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- TANGGAL DAN JAM -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Waktu pelaksanaan"
+                android:textColor="@color/tinta"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Tanggal"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/kartu"
+                app:boxStrokeColor="@color/biru"
+                app:boxCornerRadiusTopStart="13dp"
+                app:boxCornerRadiusTopEnd="13dp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusBottomEnd="13dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:textColor="@color/tinta"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Jam"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/kartu"
+                app:boxStrokeColor="@color/biru"
+                app:boxCornerRadiusTopStart="13dp"
+                app:boxCornerRadiusTopEnd="13dp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusBottomEnd="13dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etJam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:textColor="@color/tinta"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PENGINGAT -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Pengingat"
+                android:textColor="@color/tinta"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Pilih waktu pengingat"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@color/kartu"
+                app:boxStrokeColor="@color/biru"
+                app:boxCornerRadiusTopStart="13dp"
+                app:boxCornerRadiusTopEnd="13dp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusBottomEnd="13dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/acPengingat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:inputType="none"
+                    android:textColor="@color/tinta"
+                    android:textSize="15sp"
+                    android:completionThreshold="0"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- NADA ALARM -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Nada alarm"
+                android:textColor="@color/tinta"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pilih nada default atau gunakan nada khusus untuk agenda ini."
+                android:textColor="@color/tinta_lembut"
+                android:textSize="13sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPilihNada"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="13dp"
+                android:text="Pilih nada khusus"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/biru"
+                app:cornerRadius="13dp"
+                app:icon="@android:drawable/ic_lock_idle_alarm"
+                app:iconTint="@color/kuning"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/biru"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/tvNadaTerpilih"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="62dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="Menggunakan nada default JadwalKu"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPreviewNada"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Dengarkan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/biru"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/biru"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNadaDefault"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="9dp"
+                    android:text="Nada default"
+                    android:textAllCaps="false"
+                    android:textColor="@color/biru"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/biru"/>
+            </LinearLayout>
+
+            <!-- SIMPAN -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSimpan"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="26dp"
+                android:text="Simpan Agenda"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/biru"
+                app:cornerRadius="14dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

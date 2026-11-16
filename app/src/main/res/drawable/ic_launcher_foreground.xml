@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Kalender -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,29 C28,24 32,20 37,20 H71 C76,20 80,24 80,29 V76 C80,81 76,85 71,85 H37 C32,85 28,81 28,76 Z"/>
+
+    <!-- Kepala kalender -->
+    <path
+        android:fillColor="#0B1F3A"
+        android:pathData="M28,39 H80 V43 H28 Z"/>
+
+    <!-- Ring kiri -->
+    <path
+        android:fillColor="#0B1F3A"
+        android:pathData="M39,15 C41,15 43,17 43,19 V31 C43,33 41,35 39,35 C37,35 35,33 35,31 V19 C35,17 37,15 39,15 Z"/>
+
+    <!-- Ring kanan -->
+    <path
+        android:fillColor="#0B1F3A"
+        android:pathData="M69,15 C71,15 73,17 73,19 V31 C73,33 71,35 69,35 C67,35 65,33 65,31 V19 C65,17 67,15 69,15 Z"/>
+
+    <!-- Tanggal -->
+    <path
+        android:fillColor="#0B1F3A"
+        android:pathData="M37,50 H44 V57 H37 Z M49,50 H56 V57 H49 Z M37,63 H44 V70 H37 Z"/>
+
+    <!-- Tanggal terpilih -->
+    <path
+        android:fillColor="#0B1F3A"
+        android:pathData="M61,48 H73 C75,48 77,50 77,52 V65 C77,67 75,69 73,69 H61 C59,69 57,67 57,65 V52 C57,50 59,48 61,48 Z"/>
+
+    <!-- Centang -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M61,58 L64,61 L71,54 L73,56 L64,65 L59,60 Z"/>
+
+</vector>

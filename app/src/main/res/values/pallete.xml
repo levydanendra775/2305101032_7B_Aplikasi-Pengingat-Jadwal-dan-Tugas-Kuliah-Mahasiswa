@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kertas">#F5F6FA</color>
+    <color name="kartu">#FFFFFF</color>
+
+    <color name="tinta">#202B3C</color>
+    <color name="tinta_lembut">#778195</color>
+
+    <color name="biru">#203A5B</color>
+    <color name="biru_muda">#304D72</color>
+
+    <color name="jingga">#D99B3D</color>
+    <color name="kuning">#F2C36B</color>
+
+    <color name="garis">#E5E9F0</color>
+    <color name="merah">#C94B4B</color>
+
+    <color name="chip_jadwal_bg">#E5EDF8</color>
+    <color name="chip_tugas_bg">#FCEEDB</color>
+    <color name="chip_tugas_teks">#A66B19</color>
+</resources>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kertas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- HEADER UTAMA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="24dp"
+            android:background="@drawable/bg_header">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JADWALKU"
+                android:textColor="@color/kuning"
+                android:textSize="12sp"
+                android:letterSpacing="0.18"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Agenda"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:id="@+id/tvTanggalHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Hari ini"
+                android:textColor="#D4DCE8"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tvJumlahAgenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0 agenda"
+                android:textColor="#D4DCE8"
+                android:textSize="12sp"/>
+
+            <!-- KARTU STATISTIK -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <!-- BELUM SELESAI -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="7dp"
+                    app:cardBackgroundColor="@color/biru_muda"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvBelum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:textSize="29sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Belum selesai"
+                            android:textColor="#D4DCE8"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- TERLEWAT -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    app:cardBackgroundColor="@color/biru_muda"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvTerlewat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/kuning"
+                            android:textSize="29sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Terlewat"
+                            android:textColor="#D4DCE8"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- FILTER AGENDA -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/kertas"
+            app:tabIndicatorColor="@color/jingga"
+            app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="@color/biru"
+            app:tabTextColor="@color/tinta_lembut"
+            app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Button">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semua"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jadwal"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tugas"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <!-- AREA DAFTAR AGENDA -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- RECYCLER VIEW -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAgenda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="110dp"/>
+
+            <!-- TAMPILAN KETIKA AGENDA KOSONG -->
+            <LinearLayout
+                android:id="@+id/layoutKosong"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvKosong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5dp"
+                    android:text="Belum ada agenda.\nTekan Tambah agenda untuk mulai."
+                    android:textColor="@color/tinta_lembut"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- TOMBOL TAMBAH AGENDA -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabTambah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:text="Tambah agenda"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:backgroundTint="@color/biru"
+        app:icon="@android:drawable/ic_input_add"
+        app:iconTint="@color/kuning"
+        app:cornerRadius="18dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

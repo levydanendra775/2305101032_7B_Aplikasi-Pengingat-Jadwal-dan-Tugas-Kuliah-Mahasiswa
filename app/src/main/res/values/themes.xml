@@ -1,0 +1,14 @@
+<resources>
+    <style name="Theme.PengingatAgenda" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/biru</item>
+        <item name="colorPrimaryVariant">#16253D</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/jingga</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:windowBackground">@color/kertas</item>
+        <item name="android:statusBarColor">@color/biru</item>
+        <item name="android:textColorPrimary">@color/tinta</item>
+        <item name="android:textColorSecondary">@color/tinta_lembut</item>
+        <item name="android:textColorHint">@color/tinta_lembut</item>
+    </style>
+</resources>
